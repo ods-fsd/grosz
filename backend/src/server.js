@@ -3,6 +3,12 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+import transactionRoutes from './routes/transactionRoutes.js';
+import categoryRoutes from './routes/categoryRoutes.js';
+import analyticsRoutes from './routes/analyticsRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+
+
 dotenv.config();
 
 const app = express();
@@ -14,6 +20,12 @@ app.use(cors({
     credentials: true
 }));
 app.use(express.json());
+
+// Routes
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/analytics', analyticsRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/api/health', (req, res) => {
     res.status(200).json({

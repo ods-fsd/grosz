@@ -142,7 +142,6 @@ vite.config.ts.timestamp-*
 # IDEs
 .idea
 .vscode
-branding.md
 .agent
 .agent/*
 .agent/tasks
@@ -151,3 +150,11 @@ branding.md
 .agent/brain/*
 .agent/memory
 .agent/memory/*
+
+# Postman
+postman/*
+
+# Other
+branding.md
+.agent
+seed.js
